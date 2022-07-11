@@ -17,16 +17,9 @@ import java.util.List;
     Given a roman numeral, convert it to an integer.
  */
 
-public class Solution {
-    public static void main(String[] args) {
-        System.out.println(romanToIntV2("III"));
-        System.out.println(romanToIntV2("LVIII"));
-        System.out.println(romanToIntV2("MCMXCIV"));
-        System.out.println(romanToIntV2("DCXXI"));
-    }
-
-    public static int romanToIntV2(String s) {
-        List<RomanNumeral> numerals = Arrays.stream(s.split("")).map(RomanNumeral::valueOf).toList();
+public class NumeralToIntegerConverter {
+    public int romanToInt(String numeral) {
+        List<RomanNumeral> numerals = Arrays.stream(numeral.split("")).map(RomanNumeral::valueOf).toList();
         int sum = 0;
 
         for(int i=0; i<numerals.size(); i++) {
@@ -41,7 +34,7 @@ public class Solution {
         return sum;
     }
 
-    public static boolean shouldSubtract(RomanNumeral current, RomanNumeral next) {
+    public boolean shouldSubtract(RomanNumeral current, RomanNumeral next) {
         if(current == next) {
             return false;
         }
@@ -54,26 +47,4 @@ public class Solution {
         };
 
     }
-
-    private enum RomanNumeral {
-        I(1),
-        V(5),
-        X(10),
-        L(50),
-        C(100),
-        D(500),
-        M(1000);
-
-
-        private final Integer intValue;
-
-        RomanNumeral(Integer intValue) {
-            this.intValue = intValue;
-        }
-
-        public Integer getIntValue() {
-            return intValue;
-        }
-    }
-
 }
