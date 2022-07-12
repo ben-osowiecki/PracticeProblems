@@ -17,7 +17,7 @@ import java.util.List;
     Given a roman numeral, convert it to an integer.
  */
 
-public class NumeralToIntegerConverter {
+class NumeralToIntegerConverter {
     public int romanToInt(String numeral) {
         List<RomanNumeral> numerals = Arrays.stream(numeral.split("")).map(RomanNumeral::valueOf).toList();
         int sum = 0;

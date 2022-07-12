@@ -1,6 +1,6 @@
 package romanNumeralToInteger;
 
-public enum RomanNumeral {
+enum RomanNumeral {
     I(1),
     V(5),
     X(10),
