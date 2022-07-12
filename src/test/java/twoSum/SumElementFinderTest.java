@@ -19,6 +19,13 @@ class SumElementFinderTest {
         assertArrayEquals(expected, target.twoSum(integers, goal));
     }
 
+    @ParameterizedTest(name = "Integers: {0}, Target: {1} - Expected: {2}")
+    @MethodSource("twoSumArgumentProvider")
+    void twoSumImprovedTest(int[] integers, int goal, int[] expected) {
+
+        assertArrayEquals(expected, target.twoSumImproved(integers, goal));
+    }
+
     private static Stream<Arguments> twoSumArgumentProvider() {
         return Stream.of(
                 Arguments.arguments(new int[]{2,7,11,15}, 9, new int[]{0,1}),
